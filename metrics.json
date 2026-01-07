@@ -1,0 +1,21 @@
+{
+  "session_purchase": {
+    "num_train": 378296,
+    "num_test": 94575,
+    "accuracy_train": 1.0,
+    "accuracy_test": 1.0,
+    "roc_auc_train": 1.0,
+    "roc_auc_test": 1.0,
+    "precision_train": 1.0,
+    "recall_train": 1.0,
+    "f1_train": 1.0,
+    "precision_test": 1.0,
+    "recall_test": 1.0,
+    "f1_test": 1.0
+  },
+  "demand_forecast": {
+    "num_val_points": 96,
+    "mape": 0.5020138050434616,
+    "rmse": 167.1062372866014
+  }
+}

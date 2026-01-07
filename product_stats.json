@@ -1,0 +1,38 @@
+[
+  {
+    "product_id": 1,
+    "name": "The Original Mr. Fuzzy",
+    "avg_price": 59.50160596789741,
+    "avg_margin_pct": 0.6197858463928279,
+    "popularity_score": 142.7939287638407,
+    "total_orders": 23861,
+    "total_revenue": 1419767.82
+  },
+  {
+    "product_id": 2,
+    "name": "The Forever Love Bear",
+    "avg_price": 66.23135123880908,
+    "avg_margin_pct": 0.6298089228358641,
+    "popularity_score": 107.40747468935552,
+    "total_orders": 4803,
+    "total_revenue": 318109.18
+  },
+  {
+    "product_id": 3,
+    "name": "The Birthday Sugar Panda",
+    "avg_price": 58.94948826597132,
+    "avg_margin_pct": 0.6768357304109218,
+    "popularity_score": 97.1960956103893,
+    "total_orders": 3068,
+    "total_revenue": 180857.03
+  },
+  {
+    "product_id": 4,
+    "name": "The Hudson River Mini bear",
+    "avg_price": 34.03738382099827,
+    "avg_margin_pct": 0.6790650353059204,
+    "popularity_score": 62.97878583666113,
+    "total_orders": 581,
+    "total_revenue": 19775.719999999998
+  }
+]

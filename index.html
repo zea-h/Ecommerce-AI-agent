@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nexus — E‑Commerce Agent</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo-pill">
+            <span class="logo-dot"></span>
+          </div>
+          <div class="logo-text">
+            <span class="logo-title">Nexus</span>
+            <span class="logo-sub">E‑Com Agent</span>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button class="nav-item active" data-panel="overview">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Overview</span>
+          </button>
+          <button class="nav-item" data-panel="chat">
+            <span class="nav-icon">💬</span>
+            <span class="nav-label">Agent Chat</span>
+          </button>
+          <button class="nav-item" data-panel="fraud">
+            <span class="nav-icon">🛡️</span>
+            <span class="nav-label">Fraud</span>
+          </button>
+          <button class="nav-item" data-panel="inventory">
+            <span class="nav-icon">📦</span>
+            <span class="nav-label">Inventory</span>
+          </button>
+          <button class="nav-item" data-panel="content">
+            <span class="nav-icon">✍️</span>
+            <span class="nav-label">Content</span>
+          </button>
+          <button class="nav-item" data-panel="analytics">
+            <span class="nav-icon">📈</span>
+            <span class="nav-label">Analytics</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="status-chip">
+            <span class="status-dot"></span>
+            <span>Nexus online</span>
+          </div>
+          <p class="status-sub">
+            Streaming insights from your ecommerce data.  
+            Ask or click a module to begin.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="main">
+        <!-- Overview panel -->
+        <section class="panel active" id="panel-overview">
+          <div class="grid-overview">
+            <!-- Hero analytics card -->
+            <section class="card hero-card">
+              <div class="hero-left">
+                <p class="hero-kicker">Channel Analytics</p>
+                <h1 class="hero-title">Optimize your ecommerce metrics</h1>
+                <p class="hero-copy">
+                  Nexus watches sales, inventory, and risk in real time and
+                  turns them into clear, actionable plans.
+                </p>
+                <button class="hero-button" id="hero-ask-btn">
+                  Ask Nexus for today’s plan
+                </button>
+              </div>
+              <div class="hero-figure">
+                <div class="hero-avatar"></div>
+                <div class="hero-overlay">
+                  <span class="hero-pill">24/7 AI Operator</span>
+                  <span class="hero-pill">Multichannel</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- KPI row -->
+            <section class="card kpi-row">
+              <div class="kpi">
+                <span class="kpi-label">Revenue (24h)</span>
+                <span class="kpi-value" id="kpi-revenue">$36.6k</span>
+                <span class="kpi-sub">+12.4% vs yesterday</span>
+              </div>
+              <div class="kpi">
+                <span class="kpi-label">Orders</span>
+                <span class="kpi-value" id="kpi-orders">1,587</span>
+                <span class="kpi-sub">Avg. order $48.10</span>
+              </div>
+              <div class="kpi">
+                <span class="kpi-label">Return Risk</span>
+                <span class="kpi-value kpi-warning" id="kpi-risk">High</span>
+                <span class="kpi-sub">Footwear / EU region</span>
+              </div>
+            </section>
+
+            <!-- Chart + product focus -->
+            <section class="card chart-card">
+              <header class="card-header">
+                <h2>Live Sales Curve</h2>
+                <span class="pill">Last 7 days</span>
+              </header>
+              <div class="chart-shell">
+                <svg class="chart" viewBox="0 0 100 32" preserveAspectRatio="none">
+                  <polyline id="sales-line" points="0,26 20,22 40,18 60,12 80,16 100,10" />
+                  <polyline id="forecast-line" points="60,12 80,14 100,18" />
+                </svg>
+                <div class="chart-legend">
+                  <span class="legend-dot legend-primary"></span> Actual
+                  <span class="legend-dot legend-secondary"></span> Forecast
+                </div>
+              </div>
+            </section>
+
+            <section class="card product-card">
+              <header class="card-header">
+                <h2>Focus SKU</h2>
+                <span class="pill pill-soft">At risk of stockout</span>
+              </header>
+              <div class="product-body">
+                <div class="product-image"></div>
+                <div class="product-meta">
+                  <p class="product-name">Nimbus Pro Running Shoe</p>
+                  <p class="product-sub">Men’s • Road • Neutral</p>
+                  <div class="product-stats">
+                    <span>Sell‑through: <strong>82%</strong></span>
+                    <span>Cover: <strong>2.1 weeks</strong></span>
+                  </div>
+                  <button class="secondary-button" id="plan-inventory-btn">
+                    Ask Nexus for a replenishment plan
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- Agentic skill grid + task log -->
+            <section class="card skills-card">
+              <div class="skill-list">
+                <div class="skill-card" id="skill-fraud">
+                  <div class="skill-header">
+                    <span class="skill-dot"></span>
+                    <span class="skill-title">Fraud Radar</span>
+                  </div>
+                  <p class="skill-text">
+                    Watching high‑value and risky orders. Click the Fraud panel or ask
+                    “Score my latest EU PayPal orders.”
+                  </p>
+                </div>
+                <div class="skill-card" id="skill-inventory">
+                  <div class="skill-header">
+                    <span class="skill-dot"></span>
+                    <span class="skill-title">Inventory Intel</span>
+                  </div>
+                  <p class="skill-text">
+                    Forecasting demand and stock cover. Use the Inventory panel or say
+                    “Forecast demand for SKU‑ABS‑01.”
+                  </p>
+                </div>
+                <div class="skill-card" id="skill-marketing">
+                  <div class="skill-header">
+                    <span class="skill-dot"></span>
+                    <span class="skill-title">Campaign Engine</span>
+                  </div>
+                  <p class="skill-text">
+                    Designs promos, lifecycle emails, and cart recovery flows based on
+                    goals you give Nexus.
+                  </p>
+                </div>
+                <div class="skill-card" id="skill-content">
+                  <div class="skill-header">
+                    <span class="skill-dot"></span>
+                    <span class="skill-title">Copy Studio</span>
+                  </div>
+                  <p class="skill-text">
+                    Generates on‑brand product copy and subject lines at scale with tone
+                    controls.
+                  </p>
+                </div>
+              </div>
+              <div class="task-log-card">
+                <header class="task-log-header">
+                  <span class="task-log-title">Nexus Task Log</span>
+                  <span class="pill">Agent activity</span>
+                </header>
+                <pre class="task-log-output" id="task-log-output">No tasks yet. Run a fraud check, inventory forecast, or copy generation to see Nexus log its work.</pre>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <!-- Chat panel -->
+        <section class="panel" id="panel-chat">
+          <section class="card chat-card">
+            <header class="card-header">
+              <h2>Chat with Nexus</h2>
+              <span class="pill">Agentic workspace</span>
+            </header>
+            <div class="chat-layout">
+              <div class="chat-window" id="chat-window"></div>
+              <aside class="chat-side">
+                <p class="side-title">Smart prompts</p>
+                <div class="hint-list" id="prompt-list">
+                  <button class="hint-pill">
+                    Summarize yesterday’s performance and key risks.
+                  </button>
+                  <button class="hint-pill">
+                    Design a weekend promotion for low‑moving inventory.
+                  </button>
+                  <button class="hint-pill">
+                    Which SKUs are likely to stock out in the next 10 days?
+                  </button>
+                </div>
+                <p class="side-title">Detected intents</p>
+                <ul class="intent-list" id="intent-list"></ul>
+              </aside>
+            </div>
+            <form class="chat-input-row" id="chat-form">
+              <input
+                id="chat-input"
+                type="text"
+                placeholder="Ask anything across fraud, inventory, pricing, campaigns, and more…"
+                autocomplete="off"
+              />
+              <button type="submit" id="chat-submit-btn">Send</button>
+            </form>
+            <div style="margin-top: 8px; font-size: 10px; color: var(--text-muted); text-align: center;">
+              <span id="api-status"></span>
+            </div>
+          </section>
+        </section>
+
+        <!-- Fraud panel -->
+        <section class="panel" id="panel-fraud">
+          <section class="card wide-card">
+            <header class="card-header">
+              <h2>Fraud Radar</h2>
+              <span class="pill">Real‑time risk scoring</span>
+            </header>
+            <div class="split">
+              <form class="stack" id="fraud-form">
+                <label class="field">
+                  <span>Order ID</span>
+                  <input
+                    id="fraud-order-id"
+                    type="text"
+                    placeholder="e.g. ORD‑2031"
+                    required
+                  />
+                </label>
+                <label class="field">
+                  <span>Notes (optional)</span>
+                  <textarea
+                    id="fraud-notes"
+                    rows="3"
+                    placeholder="High value, different billing / shipping country, paid with PayPal…"
+                  ></textarea>
+                </label>
+                <button type="submit" class="primary-button">
+                  Evaluate fraud risk
+                </button>
+              </form>
+              <div class="stack">
+                <div class="fraud-gauge">
+                  <div class="gauge-arc">
+                    <div class="gauge-needle" id="fraud-needle"></div>
+                  </div>
+                  <p class="gauge-label" id="fraud-level">No score yet</p>
+                </div>
+                <pre class="output" id="fraud-output">No order scored yet.</pre>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- Inventory panel -->
+        <section class="panel" id="panel-inventory">
+          <section class="card wide-card">
+            <header class="card-header">
+              <h2>Inventory & Demand</h2>
+              <span class="pill">Forecast & cover</span>
+            </header>
+            <div class="split">
+              <form class="stack" id="inventory-form">
+                <label class="field">
+                  <span>SKU</span>
+                  <input
+                    id="inv-sku"
+                    type="text"
+                    placeholder="e.g. SKU‑ABS‑01"
+                    required
+                  />
+                </label>
+                <label class="field">
+                  <span>Weeks horizon</span>
+                  <input
+                    id="inv-weeks"
+                    type="number"
+                    min="4"
+                    max="16"
+                    value="8"
+                  />
+                </label>
+                <button type="submit" class="primary-button">
+                  Analyze & forecast
+                </button>
+              </form>
+              <div class="stack">
+                <div class="sparkline-shell">
+                  <p class="side-title">Projected weekly demand</p>
+                  <svg
+                    class="chart small-chart"
+                    id="inv-sparkline"
+                    viewBox="0 0 100 32"
+                    preserveAspectRatio="none"
+                  >
+                    <polyline points="" />
+                  </svg>
+                  <p class="sparkline-caption" id="inv-caption">
+                    No forecast yet.
+                  </p>
+                </div>
+                <pre class="output" id="inventory-output">No SKU analyzed yet.</pre>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- Content panel -->
+        <section class="panel" id="panel-content">
+          <section class="card wide-card">
+            <header class="card-header">
+              <h2>AI Copy Studio</h2>
+              <span class="pill">Descriptions & campaigns</span>
+            </header>
+            <div class="split">
+              <form class="stack" id="content-form">
+                <label class="field">
+                  <span>Product name</span>
+                  <input
+                    id="content-name"
+                    type="text"
+                    placeholder="e.g. Nimbus Pro Running Shoe"
+                    required
+                  />
+                </label>
+                <label class="field">
+                  <span>Key features</span>
+                  <textarea
+                    id="content-features"
+                    rows="3"
+                    placeholder="Breathable mesh upper, lightweight foam, reflective details…"
+                  ></textarea>
+                </label>
+                <label class="field">
+                  <span>Tone</span>
+                  <select id="content-tone">
+                    <option value="neutral">Neutral & factual</option>
+                    <option value="premium">Premium & aspirational</option>
+                    <option value="playful">Playful & energetic</option>
+                  </select>
+                </label>
+                <button type="submit" class="primary-button">
+                  Generate description
+                </button>
+              </form>
+              <div class="stack">
+                <pre class="output" id="content-output">
+No description generated yet.
+                </pre>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- Analytics panel with AI-powered dashboard -->
+        <section class="panel" id="panel-analytics">
+          <section class="card wide-card">
+            <header class="card-header">
+              <h2>AI-Powered Analytics Dashboard</h2>
+              <span class="pill">Interactive & Live</span>
+            </header>
+            <div class="dashboard-controls">
+              <input
+                type="text"
+                id="chart-prompt"
+                placeholder="Ask AI to create a chart: 'Show profit by country', 'Revenue over time', etc."
+                style="width: 100%; margin-bottom: 12px;"
+              />
+              <button class="primary-button" id="generate-chart-btn" style="width: 100%;">
+                Generate Chart with AI
+              </button>
+            </div>
+            <div class="dashboard-grid" id="dashboard-grid">
+              <!-- Charts will be dynamically inserted here -->
+              <div class="dashboard-placeholder">
+                <p>📊 **AI-Powered Dashboard**</p>
+                <p style="font-size: 11px; color: var(--text-soft); margin-top: 8px;">
+                  Ask me to create charts using natural language! Examples:
+                </p>
+                <ul style="font-size: 11px; color: var(--text-soft); margin-top: 8px; text-align: left;">
+                  <li>"Show profit by country"</li>
+                  <li>"Revenue over time"</li>
+                  <li>"Sales by product category"</li>
+                  <li>"Compare order values by payment method"</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- OpenAI SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/openai@4.47.1/dist/index.min.js"></script>
+    <script src="agent.js"></script>
+  </body>
+  </html>
+
+

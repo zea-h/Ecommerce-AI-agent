@@ -1,4 +1,3 @@
-# Ecommerce-AI-agent
 # Nexus - AI-Powered E-commerce Agent
 
 Nexus is a comprehensive AI-powered e-commerce assistant that handles all aspects of your online store operations.
@@ -72,5 +71,4 @@ The interface uses a neutral color palette:
 - The OpenAI API key is stored locally in your browser (localStorage)
 - Conversation history is maintained during your session
 - All e-commerce capabilities are fully functional
-
 
